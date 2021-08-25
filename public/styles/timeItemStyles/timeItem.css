@@ -1,281 +1,281 @@
 .gradient-divider {
-    width: 100vw;
-    height: 120px;
-    background: linear-gradient(
-        0deg,
-        var(--secondary-background-color),
-        var(--main-background-color)
-    );
+  width: 100vw;
+  height: 120px;
+  background: linear-gradient(
+    0deg,
+    var(--secondary-background-color),
+    var(--main-background-color)
+  );
 }
 
 #timeItemsContainer {
-    background: var(--secondary-background-color);
+  background: var(--secondary-background-color);
 }
 .time-items-container {
-    margin-top: 18px;
-    width: 90vw;
-    max-width: 700px;
+  margin-top: 20px;
+  width: 90vw;
+  max-width: 700px;
 }
 
 #timeItemsContainer .time-items-title {
-    color: var(--primary-text);
-    font-size: 35px;
-    font-family: var(--title-font-family);
-    font-weight: bold;
+  color: var(--primary-text);
+  font-size: 35px;
+  font-family: var(--title-font-family);
+  font-weight: bold;
 }
 
 .time-item {
-    border-radius: 10px !important;
-    background: #393e46 !important;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px !important;
+  background: #393e46 !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
 
 .time-item-header {
-    height: 90px;
-    width: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
+  height: 90px;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .time-item-header .time-title {
-    max-width: 500px;
-    width: 80%;
-    color: rgb(139, 139, 139);
-    font-size: 15px;
-    margin-left: 15px !important;
-    margin-top: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+  max-width: 500px;
+  width: 80%;
+  color: rgb(139, 139, 139);
+  font-size: 15px;
+  margin-left: 15px !important;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .time-item-header .time-text {
-    color: #eeeeee;
-    font-family: Courier, monospace;
-    font-size: 30px !important;
-    margin: 0px 15px;
-    font-weight: bolder;
-    letter-spacing: -2px !important;
+  color: #eeeeee;
+  font-family: Courier, monospace;
+  font-size: 30px !important;
+  margin: 0px 15px;
+  font-weight: bolder;
+  letter-spacing: -2px !important;
 }
 .time-item-header .time-text span {
-    color: inherit;
-    font-family: inherit;
-    font-size: 22px;
-    font-weight: inherit;
-    letter-spacing: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: inherit;
+  letter-spacing: inherit;
 }
 
 .time-item-header .tag-icon {
-    max-width: 180px;
-    width: auto;
-    color: white;
-    padding: 0;
-    margin: 0;
-    height: fit-content;
-    padding: 2px 0px 2px 2px;
-    border-radius: 5px;
-    font-size: 13px;
+  max-width: 180px;
+  width: auto;
+  color: white;
+  padding: 0;
+  margin: 0;
+  height: fit-content;
+  padding: 2px 0px 2px 2px;
+  border-radius: 5px;
+  font-size: 13px;
 }
 .time-item-header .tag-icon .tag-text {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .time-item-header .time-title-value-container {
-    width: 70%;
+  width: 70%;
 }
 
 .item-time-date {
-    margin-bottom: 10px;
-    color: #eeeeee;
-    font-size: 12px;
-    padding: 0px 5px;
-    letter-spacing: 0.5px;
-    text-align: center;
+  margin-bottom: 10px;
+  color: #eeeeee;
+  font-size: 12px;
+  padding: 0px 5px;
+  letter-spacing: 0.5px;
+  text-align: center;
 }
 .item-time-date .date {
-    color: rgb(167, 167, 167);
+  color: rgb(167, 167, 167);
 }
 
 .time-item-header .collapse-btn {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    margin: 0 !important;
-    padding: 0 !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .time-item-header .collapse-btn span {
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    color: rgb(146, 146, 146);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: rgb(146, 146, 146);
 }
 
 .time-items-container .inner-time-item .time-title h1 {
-    color: #eeeeee;
-    font-size: 20px;
-    font-weight: bold;
-    width: 80%;
-    /* padding: 3px 15px !important; */
-    /* margin: 0 !important; */
+  color: #eeeeee;
+  font-size: 20px;
+  font-weight: bold;
+  width: 80%;
+  /* padding: 3px 15px !important; */
+  /* margin: 0 !important; */
 }
 .time-items-container .inner-time-item .underline {
-    height: 3px;
-    width: 50%;
-    background: #00adb5;
-    margin: 0 auto;
+  height: 3px;
+  width: 50%;
+  background: #00adb5;
+  margin: 0 auto;
 }
 
 .time-items-container .inner-time-item .time-stats-container .time-stat {
-    width: 100%;
-    color: #d3d3d3;
-    font-size: 14px;
+  width: 100%;
+  color: #d3d3d3;
+  font-size: 14px;
 }
 .time-items-container .inner-time-item label {
-    width: 100%;
-    color: #00adb5;
-    font-size: 12px;
+  width: 100%;
+  color: #00adb5;
+  font-size: 12px;
 }
 .time-items-container .inner-time-item .time-description p {
-    color: #eeeeee;
-    font-size: 14px;
+  color: #eeeeee;
+  font-size: 14px;
 }
 
 .time-items-container .inner-time-item .edit-btns button {
-    font-size: 12px;
-    font-weight: bold;
-    height: 35px;
-    width: 70px;
-    margin: 15px 15px 5px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  height: 35px;
+  width: 70px;
+  margin: 15px 15px 5px 15px;
 }
 
 #timeItemsContainer .total-filtered-time label {
-    padding: 0;
-    margin: 0;
-    font-size: 12px;
-    color: var(--primary-blue);
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  color: var(--primary-blue);
 }
 #timeItemsContainer .total-filtered-time span {
-    padding: 0;
-    margin: 0;
-    font-size: 26px;
-    letter-spacing: -2px;
-    font-family: var(--time-font-family);
-    font-weight: bold;
-    color: var(--primary-text);
+  padding: 0;
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: -2px;
+  font-family: var(--time-font-family);
+  font-weight: bold;
+  color: var(--primary-text);
 }
 @media screen and (min-width: 1200px) {
-    #timeItemsContainer .total-filtered-time span {
-        font-size: 30px;
-    }
+  #timeItemsContainer .total-filtered-time span {
+    font-size: 30px;
+  }
 }
 
 #timeItemsContainer .no-times {
-    height: 160px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+  height: 160px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
 #timeItemsContainer .no-times .data-icon {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    border: 2px solid var(--primary-blue);
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-blue);
 }
 #timeItemsContainer .no-times i {
-    color: var(--primary-blue);
-    font-size: 30px;
+  color: var(--primary-blue);
+  font-size: 30px;
 }
 #timeItemsContainer .no-times h1 {
-    color: var(--primary-text);
+  color: var(--primary-text);
 }
 #timeItemsContainer .no-times span {
-    font-size: 16px;
-    color: var(--secondary-text);
+  font-size: 16px;
+  color: var(--secondary-text);
 }
 
 @media screen and (max-width: 900px) {
-    .time-item-header .time-title {
-        margin-left: 20px !important;
-        margin-top: 10px;
-        font-size: 16px;
-    }
-    .time-item-header .time-text {
-        margin: 0px 20px;
-        font-size: 35px !important;
-        font-weight: bolder;
-    }
-    .time-item-header .tag-icon .tag-text {
-        font-size: 13px;
-    }
-    .time-item-header .item-time-date {
-        margin-right: 20px;
-        font-size: 13px;
-    }
+  .time-item-header .time-title {
+    margin-left: 20px !important;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .time-item-header .time-text {
+    margin: 0px 20px;
+    font-size: 35px !important;
+    font-weight: bolder;
+  }
+  .time-item-header .tag-icon .tag-text {
+    font-size: 13px;
+  }
+  .time-item-header .item-time-date {
+    margin-right: 20px;
+    font-size: 13px;
+  }
 }
 @media screen and (max-width: 600px) {
-    .time-item-header .tag-icon {
-        max-width: 120px;
-    }
-    .item-time-date {
-        margin-right: 0px !important;
-    }
+  .time-item-header .tag-icon {
+    max-width: 120px;
+  }
+  .item-time-date {
+    margin-right: 0px !important;
+  }
 }
 @media screen and (max-width: 500px) {
-    .time-item-header .time-text {
-        margin: 0px 10px;
-        font-size: 29px !important;
-    }
-    .time-item-header .time-title {
-        margin-left: 10px !important;
-        margin-top: 10px;
-        margin-bottom: 0px;
-    }
-    .time-items-container {
-        width: 95vw;
-    }
+  .time-item-header .time-text {
+    margin: 0px 10px;
+    font-size: 29px !important;
+  }
+  .time-item-header .time-title {
+    margin-left: 10px !important;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  .time-items-container {
+    width: 95vw;
+  }
 }
 @media screen and (max-width: 375px) {
-    .time-item-header .time-title {
-        margin-top: 10px;
-        margin-bottom: 0px;
-    }
-    .time-item-header .time-text {
-        font-size: 28px !important;
-    }
-    .time-item-header .tag-icon {
-        max-width: 100px;
-        padding: 2px;
-    }
-    .time-item-header .tag-icon .tag-text {
-        font-size: 11px;
-        font-weight: bold;
-    }
+  .time-item-header .time-title {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  .time-item-header .time-text {
+    font-size: 28px !important;
+  }
+  .time-item-header .tag-icon {
+    max-width: 100px;
+    padding: 2px;
+  }
+  .time-item-header .tag-icon .tag-text {
+    font-size: 11px;
+    font-weight: bold;
+  }
 }
 @media screen and (max-width: 350px) {
-    .time-item-header .time-text {
-        margin: 0px 10px 0px 5px;
-        font-size: 27px !important;
-    }
-    .time-item-header .time-title {
-        margin-left: 5px !important;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+  .time-item-header .time-text {
+    margin: 0px 10px 0px 5px;
+    font-size: 27px !important;
+  }
+  .time-item-header .time-title {
+    margin-left: 5px !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }
 @media screen and (max-width: 330px) {
-    .time-item-header .time-text {
-        font-size: 25px !important;
-    }
-    .item-time-date {
-        font-size: 10px;
-    }
+  .time-item-header .time-text {
+    font-size: 25px !important;
+  }
+  .item-time-date {
+    font-size: 10px;
+  }
 }
 @media screen and (max-width: 300px) {
-    .time-item-header .time-text {
-        font-size: 22px !important;
-    }
+  .time-item-header .time-text {
+    font-size: 22px !important;
+  }
 }

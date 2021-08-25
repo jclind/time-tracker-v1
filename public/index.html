@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <link rel="icon" href="static/favicon.ico">
         <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -2422,7 +2423,6 @@
 
             <div
                 class="
-                    sorting-methods
                     d-flex
                     flex-column
                     justify-content-center
@@ -2434,7 +2434,7 @@
                         d-flex
                         justify-content-center
                         m-auto
-                        pb-4
+                        pb-3
                     "
                     id="sortByDateBtns"
                 >
@@ -2447,70 +2447,97 @@
                     <button class="btn" id="yearBtn">Year</button>
                     <button class="btn" id="allTimeBtn">All Time</button>
                 </div>
-                <div
-                    class="
-                        d-flex
-                        flex-column
-                        align-items-center
-                        justify-content-center
-                        align-self-center
-                        position-relative
-                    "
-                    id="sortByOrderDropdown"
-                >
-                    <label for="" class="mr-auto">Sort by:</label>
+                <section class="search-sort-section d-flex justify-content-between">
+                    <div class="search-times-container d-flex flex-column">
+                        <label for="search">Search Times</label>
+                        <div class="search-times-input-container position-relative">
+                            <i class="fa fa-search"></i>
+                            <input type="text" name="search" class="input search-times-input" placeholder="Search">
+                            <button
+                                class="btn position-absolute"
+                                onclick="document.getElementById('timeNameInput').value = ''"
+                                tabindex="-1"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="22"
+                                    height="22"
+                                    fill="currentColor"
+                                    class="bi bi-x"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                     <div
                         class="
-                            sort-by-order
                             d-flex
-                            flex-row
+                            flex-column
                             align-items-center
-                            m-auto
+                            justify-content-center
+                            align-self-center
                             position-relative
-                            px-4
                         "
-                        id="activePropertyFilter"
+                        id="sortByOrderDropdown"
                     >
-                        <div class="active-filter">Date</div>
-                        <i
+                        <label for="" class="mr-auto">Sort by:</label>
+                        <div
                             class="
-                                fa fa-angle-up
-                                dropdown-icon
-                                position-absolute
-                            "
-                        ></i>
-                        <button
-                            class="
-                                reverse-btn
-                                btn
+                                sort-by-order
                                 d-flex
+                                flex-row
+                                align-items-center
+                                m-auto
+                                position-relative
+                                px-4
+                            "
+                            id="activePropertyFilter"
+                        >
+                            <div class="active-filter">Date</div>
+                            <i
+                                class="
+                                    fa fa-angle-up
+                                    dropdown-icon
+                                    position-absolute
+                                "
+                            ></i>
+                            <button
+                                class="
+                                    reverse-btn
+                                    btn
+                                    d-flex
+                                    justify-content-center
+                                    align-items-center
+                                    position-absolute
+                                "
+                            >
+                                <i class="fa fa-long-arrow-up reverse-btn-icon"></i>
+                            </button>
+                        </div>
+                        <div
+                            class="
+                                sort-by-order-dropdown-box
+                                d-none
+                                flex-column
                                 justify-content-center
                                 align-items-center
                                 position-absolute
+                                py-2
                             "
+                            id="properyDropdownBox"
                         >
-                            <i class="fa fa-long-arrow-up reverse-btn-icon"></i>
-                        </button>
+                            <div class="dropdown-selection pl-2 my-2">Tag</div>
+                            <div class="dropdown-dividor pl-2"></div>
+                            <div class="dropdown-selection pl-2 my-2">Time</div>
+                            <div class="dropdown-dividor pl-2"></div>
+                            <div class="dropdown-selection pl-2 my-2">Name</div>
+                        </div>
                     </div>
-                    <div
-                        class="
-                            sort-by-order-dropdown-box
-                            d-none
-                            flex-column
-                            justify-content-center
-                            align-items-center
-                            position-absolute
-                            py-2
-                        "
-                        id="properyDropdownBox"
-                    >
-                        <div class="dropdown-selection pl-2 my-2">Tag</div>
-                        <div class="dropdown-dividor pl-2"></div>
-                        <div class="dropdown-selection pl-2 my-2">Time</div>
-                        <div class="dropdown-dividor pl-2"></div>
-                        <div class="dropdown-selection pl-2 my-2">Name</div>
-                    </div>
-                </div>
+                </section>
             </div>
             <div class="time-items-container d-block flex-column p-1">
                 <div class="accordion" id="timeTableAccordian"></div>
@@ -2592,6 +2619,7 @@
         <script type="text/javascript" src="scripts/timeTableFunctions/sortByProperty.js"></script>
         <script type="text/javascript" src="scripts/timeTableFunctions/editTimeItem.js"></script>
         <script type="text/javascript" src="scripts/timeTableFunctions/deleteTimeItem.js"></script>
+        <script type="text/javascript" src="scripts/timeTableFunctions/searchTimes.js"></script>
 
         <!-- Modals -->
         <script type="text/javascript" src="scripts/modalFuntions/changePassword.js"></script>

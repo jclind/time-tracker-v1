@@ -1,31 +1,46 @@
 const updateTimeTable = timesArray => {
-    const timeTableAccordian = document.getElementById('timeTableAccordian')
-    if (sortByTimePeriod(timesArray).length !== 0) {
-        // set filteredArr equal to timesArray first sortedByPriod and then by property
-        let filteredArr = sortByProperty(sortByTimePeriod(timesInfoList))
+  const timeTableAccordian = document.getElementById('timeTableAccordian')
+  if (sortByTimePeriod(timesArray).length !== 0) {
+    // set filteredArr equal to timesArray first sortedByPriod and then by property
+    let filteredArr = sortByProperty(sortByTimePeriod(timesInfoList))
 
-        timeTableAccordian.innerHTML = ''
-        filteredArr.forEach(el => {
-            let time = el.time,
-                formatedTime = formatTime(time),
-                name = el.name,
-                date = new Date(el.date),
-                tagKey = el.tagKey,
-                tag = timeTags.find(el => el.key === tagKey),
-                startTime = new Date(el.startTime),
-                finishTime = new Date(el.finishTime),
-                description = el.description,
-                key = el.key
-            console.log('i')
-            let msIndex = formatedTime.indexOf('.')
-            if (msIndex >= 0) {
-                formatedTime =
-                    formatedTime.slice(0, msIndex) +
-                    '<span style="color: rgb(167, 167, 167)">' +
-                    formatedTime.slice(msIndex) +
-                    '</span>'
-            }
-            timeTableAccordian.innerHTML += `
+    // If there is a value in the search times input, then filter filteredArr for matching names
+    if ($('.search-times-input').val()) {
+      console.log('there is something in here')
+      let searchTimeInputValue = $('.search-times-input').val().toLowerCase()
+      console.log(searchTimeInputValue)
+
+      filteredArr = filteredArr.filter(item => {
+        const itemName = item.name.toLowerCase()
+        const searchTimeInputValue = $(
+          '.search-times-input'
+        ).value.toLowerCase()
+
+        return itemName.includes(searchTimeInputValue)
+      })
+    }
+
+    timeTableAccordian.innerHTML = ''
+    filteredArr.forEach(el => {
+      let time = el.time,
+        formatedTime = formatTime(time),
+        name = el.name,
+        date = new Date(el.date),
+        tagKey = el.tagKey,
+        tag = timeTags.find(el => el.key === tagKey),
+        startTime = new Date(el.startTime),
+        finishTime = new Date(el.finishTime),
+        description = el.description,
+        key = el.key
+      let msIndex = formatedTime.indexOf('.')
+      if (msIndex >= 0) {
+        formatedTime =
+          formatedTime.slice(0, msIndex) +
+          '<span style="color: rgb(167, 167, 167)">' +
+          formatedTime.slice(msIndex) +
+          '</span>'
+      }
+      timeTableAccordian.innerHTML += `
                 <div class="card time-item mb-3">
                     <div
                         class="card-header time-item-header d-flex justify-content-between align-items-center position-relative"
@@ -58,14 +73,14 @@ const updateTimeTable = timesArray => {
                                         </svg>
                                     </div>
                                     <span class="ml-1 tag-text">${
-                                        tag.name
+                                      tag.name
                                     }</span>
                                 </div>
                             </div>
                         </div>
                         <div class="item-time-date">
                             <span class="date">${formatTimeItemDate(
-                                date
+                              date
                             )}</span><br />
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +98,8 @@ const updateTimeTable = timesArray => {
                                 />
                             </svg>
                             <span class="time">${formatTimeItemTimeSegment(
-                                startTime,
-                                finishTime
+                              startTime,
+                              finishTime
                             )}</span>
                         </div>
                         <button
@@ -134,8 +149,8 @@ const updateTimeTable = timesArray => {
                                         >Time Segment:</label
                                     >
                                     <div>${formatTimeItemTimeSegment(
-                                        startTime,
-                                        finishTime
+                                      startTime,
+                                      finishTime
                                     )}</div>
                                 </div>
                             </div>
@@ -165,17 +180,17 @@ const updateTimeTable = timesArray => {
                     </div>
                 </div>
             `
-        })
-        timeTableAccordian.innerHTML += `
+    })
+    timeTableAccordian.innerHTML += `
             <div class="total-filtered-time d-block pt-4 text-left">
                 <label>Total Time:</label> <br>
                 <span class="text-center">${formatTime(
-                    calcTotalTime(filteredArr)
+                  calcTotalTime(filteredArr)
                 )}</span>
             </div>
         `
-    } else {
-        timeTableAccordian.innerHTML = `
+  } else {
+    timeTableAccordian.innerHTML = `
         <div class="no-times d-flex justify-content-center flex-column align-items-center mx-auto mt-4">
             <div class="d-flex justify-content-center align-items-center mx-auto">
                 <div class="data-icon d-flex justify-content-center align-items-center mx-3">
@@ -186,54 +201,54 @@ const updateTimeTable = timesArray => {
             <span class="mt-4">Recorded times will show up here.</span>
         </div>   
         `
-    }
+  }
 }
 
 const formatTimeItemDate = date => {
-    let timeDay = date.getDate()
-    let timeMonth = date.getMonth()
-    let timeYear = date.getFullYear()
+  let timeDay = date.getDate()
+  let timeMonth = date.getMonth()
+  let timeYear = date.getFullYear()
 
-    let currDate = new Date()
-    let yesterday = new Date(currDate)
-    yesterday.setDate(yesterday.getDate() - 1)
+  let currDate = new Date()
+  let yesterday = new Date(currDate)
+  yesterday.setDate(yesterday.getDate() - 1)
 
-    // Check if time's date is today
-    if (
-        timeDay === currDate.getDate() &&
-        timeMonth === currDate.getMonth() &&
-        timeYear === currDate.getFullYear()
-    ) {
-        return 'Today'
-    } else if (
-        timeDay === yesterday.getDate() &&
-        timeMonth === yesterday.getMonth() &&
-        timeYear === yesterday.getFullYear()
-    ) {
-        return 'Yesterday'
-    } else {
-        return `${timeMonth}/${timeDay}/${timeYear}`
-    }
+  // Check if time's date is today
+  if (
+    timeDay === currDate.getDate() &&
+    timeMonth === currDate.getMonth() &&
+    timeYear === currDate.getFullYear()
+  ) {
+    return 'Today'
+  } else if (
+    timeDay === yesterday.getDate() &&
+    timeMonth === yesterday.getMonth() &&
+    timeYear === yesterday.getFullYear()
+  ) {
+    return 'Yesterday'
+  } else {
+    return `${timeMonth}/${timeDay}/${timeYear}`
+  }
 }
 
 const formatTimeItemTimeSegment = (startTime, finishTime) => {
-    let startHours = startTime.getHours()
-    let startMinutes = startTime.getMinutes()
-    let startAMPM = startHours >= 12 ? 'pm' : 'am'
-    startHours = startHours % 12
-    startHours = startHours ? startHours : 12 // The hour '0' shuold be set to '12'
-    startMinutes = startMinutes < 10 ? '0' + startMinutes : startMinutes // Format minutes if less than 10
+  let startHours = startTime.getHours()
+  let startMinutes = startTime.getMinutes()
+  let startAMPM = startHours >= 12 ? 'pm' : 'am'
+  startHours = startHours % 12
+  startHours = startHours ? startHours : 12 // The hour '0' shuold be set to '12'
+  startMinutes = startMinutes < 10 ? '0' + startMinutes : startMinutes // Format minutes if less than 10
 
-    let finishHours = finishTime.getHours()
-    let finishMinutes = finishTime.getMinutes()
-    let finishAMPM = startHours >= 12 ? 'pm' : 'am'
-    finishHours = finishHours % 12
-    finishHours = finishHours ? finishHours : 12 // The hour '0' shuold be set to '12'
-    finishMinutes = finishMinutes < 10 ? '0' + finishMinutes : finishMinutes // Format minutes if less than 10
+  let finishHours = finishTime.getHours()
+  let finishMinutes = finishTime.getMinutes()
+  let finishAMPM = startHours >= 12 ? 'pm' : 'am'
+  finishHours = finishHours % 12
+  finishHours = finishHours ? finishHours : 12 // The hour '0' shuold be set to '12'
+  finishMinutes = finishMinutes < 10 ? '0' + finishMinutes : finishMinutes // Format minutes if less than 10
 
-    return `${startHours}:${startMinutes}${startAMPM}-${finishHours}:${finishMinutes}${finishAMPM}`
+  return `${startHours}:${startMinutes}${startAMPM}-${finishHours}:${finishMinutes}${finishAMPM}`
 }
 
 const calcTotalTime = arr => {
-    return arr.reduce((acc, curr) => acc + curr.time, 0)
+  return arr.reduce((acc, curr) => acc + curr.time, 0)
 }
